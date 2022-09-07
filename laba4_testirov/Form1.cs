@@ -149,6 +149,17 @@ namespace laba4_testirov
                 }
             }
         }
+        public double get_text1()
+        {
+            string s = textBox1.Text;
+            return Convert.ToDouble(s);
+        }
+        public double get_text2()
+        {
+            string s = textBox1.Text;
+            return Convert.ToDouble(s);
+        }
+
         public string get_box1()//выбор comboBox1
         {
             string selectedState = comboBox1.SelectedItem.ToString();
