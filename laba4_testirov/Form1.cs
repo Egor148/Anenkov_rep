@@ -245,6 +245,18 @@ namespace laba4_testirov
         {
             textBox3.Clear();
         }
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            this.monthCalendar1.MaxSelectionCount = 1;
+            // Это возвратит только дату без времени
+            textBox3.Text += get_kalend();
+        }
+        private string get_kalend()
+        {
+            string s;
+            s = String.Format("{0}", this.monthCalendar1.SelectionRange.Start.ToShortDateString() + " ");
+            return s;
+        }
 
         public double extrapolate(double[,] d, double x)
         {
