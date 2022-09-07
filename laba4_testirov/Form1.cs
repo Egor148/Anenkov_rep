@@ -108,5 +108,73 @@ namespace laba4_testirov
         {
             kurs();//вызов функции для расчета отношения валют
         }
+        private void name_valute1(object sender, EventArgs e)
+        {//"EUR", "RUB", "BYN", "INR", "KZT", "CAD", "CNY", "UZS"
+            switch (get_box1())
+            {
+                case "USD":
+                    label4.Text = "Доллар США";
+                    break;
+                case "EUR":
+                    label4.Text = "Евро";
+                    break;
+                case "RUB":
+                    label4.Text = "Рубль";
+                    break;
+                case "BYN":
+                    label4.Text = "Белорусский рубль";
+                    break;
+                case "INR":
+                    label4.Text = "Рупий";
+                    break;
+                case "KZT":
+                    label4.Text = "Тенге";
+                    break;
+                case "CAD":
+                    label4.Text = "Доллар Канада";
+                    break;
+                case "CNY":
+                    label4.Text = "Юань";
+                    break;
+                case "UZS":
+                    label4.Text = "Узб. Сумы";
+                    break;
+            }
+        }
+        private void name_valute2(object sender, EventArgs e)
+        {
+            switch (get_box2())
+            {
+                case "USD":
+                    label5.Text = "Доллар США";
+                    break;
+                case "EUR":
+                    label5.Text = ("Евро");
+                    break;
+                case "RUB":
+                    label5.Text = "Рубль";
+                    break;
+                case "BYN":
+                    label5.Text = "Белорусский рубль";
+                    break;
+                case "INR":
+                    label5.Text = "Рупий";
+                    break;
+                case "KZT":
+                    label5.Text = "Тенге";
+                    break;
+                case "CAD":
+                    label5.Text = "Доллар Канада";
+                    break;
+                case "CNY":
+                    label5.Text = "Юань";
+                    break;
+                case "UZS":
+                    label5.Text = "Узб. Сумы";
+                    break;
+            }
+        }
+
+
     }
 }
