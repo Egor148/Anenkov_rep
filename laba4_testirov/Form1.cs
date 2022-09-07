@@ -19,7 +19,7 @@ namespace laba4_testirov
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int a = 5;
+
         }
     }
 }
