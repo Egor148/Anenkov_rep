@@ -289,6 +289,41 @@ namespace laba4_testirov
             string selectedState = comboBox3.SelectedItem.ToString();
             return selectedState;
         }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            his_Replace();//передаем список
+            double d1, d2, price1 = 0, price2 = 0;
+            string s = val.date[0].Substring(0, val.date[0].IndexOf('/'));//обрезаем только число из даты
+            d1 = Convert.ToDouble(s);
+            string s2 = val.date[1].Substring(0, val.date[1].IndexOf('/'));//обрезаем только число из даты
+            d2 = Convert.ToDouble(s2);
+            string pr1, pr2;
+            //поиск цены в his[i]
+            for (int i = 0; i < val.his.Count; i += 2)
+            {
+                if (s.Equals(val.his[i].Substring(0, (val.his[i]).IndexOf('/'))))
+                {
+                    pr1 = val.his[i + 1];
+                    price1 = Convert.ToDouble(pr1);
+                }
+                else if (s2.Equals(val.his[i].Substring(0, (val.his[i]).IndexOf('/'))))
+                {
+                    pr2 = val.his[i + 1];
+                    price2 = Convert.ToDouble(pr2);
+                }
+            }
+
+            double[,] d = { { d1, price1 }, { d2, price2 } }; //воткнуть даты придумать как считать разницу в функции
+            //взять цену из функции get_kurs_history добавить еще один аргумент bool.
+            // если выполняем экстраполяцию то type(bool) = true
+            // и там в обработке ищем дату и возвращаем цену, подставляем цену и делаем экстраполяцию
+            // или найти цену в his[i]
+            string x = textBox3.Text;
+            s = x.Substring(0, x.IndexOf('.'));//обрезаем только число из даты
+            double xx = Convert.ToDouble(s); //нужная дата
+            textBox2.Clear();
+            textBox2.AppendText("Экстраполяция на " + xx + " число: " + extrapolate(d, xx));
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
