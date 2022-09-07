@@ -17,6 +17,49 @@ namespace laba4_testirov
         public Form1()
         {
             InitializeComponent();
+            //объект класса Valute
+            monthCalendar1.DateChanged += monthCalendar1_DateSelected;
+            for (int i = 0; i < val.name.Length; i++)
+            {
+                comboBox1.Items.Add(val.name[i]);
+                comboBox2.Items.Add(val.name[i]);
+                comboBox3.Items.Add(val.name[i]);
+            }
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
+            textBox1.Text = "1";
+            textBox4.Text = "1";
+
+        }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedState = comboBox2.SelectedItem.ToString();
+            if (selectedState != "RUB")
+            {
+                string val = get_kurs(selectedState);
+                c2 = Convert.ToDouble(val);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedState = comboBox1.SelectedItem.ToString();
+            if (selectedState != "RUB")
+            {
+                string val = get_kurs(selectedState);
+                c1 = Convert.ToDouble(val);
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            // throw new NotImplementedException();
         }
 
         private void Form1_Load(object sender, EventArgs e)
