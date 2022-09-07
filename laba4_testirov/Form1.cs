@@ -106,7 +106,7 @@ namespace laba4_testirov
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            kurs();//вызов функции для расчета отношения валют
         }
     }
 }
