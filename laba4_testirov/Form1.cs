@@ -241,6 +241,10 @@ namespace laba4_testirov
                     break;
             }
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox3.Clear();
+        }
 
         public double extrapolate(double[,] d, double x)
         {
