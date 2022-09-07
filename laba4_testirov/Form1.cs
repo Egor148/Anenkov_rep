@@ -93,6 +93,16 @@ namespace laba4_testirov
                 }
             }
         }
+        public string get_box1()//выбор comboBox1
+        {
+            string selectedState = comboBox1.SelectedItem.ToString();
+            return selectedState;
+        }
+        public string get_box2()//выбор comboBox2
+        {
+            string selectedState = comboBox2.SelectedItem.ToString();
+            return selectedState;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
